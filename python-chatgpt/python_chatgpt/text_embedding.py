@@ -13,7 +13,7 @@ def get_company_info(name: str, revenues: str, market_value: str, employees: str
     return context
 
 # DataFrame.apply(func, axis=0, raw=False, result_type=None, args=(), **kwargs)
-df["info"] = df.apply(
+df["info"] = df.apply( # 컬럼 추가
                 func=lambda df: get_company_info(
                             df['name'].strip(),
                             df['revenues'].strip(),

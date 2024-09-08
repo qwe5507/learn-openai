@@ -24,7 +24,7 @@ df['cosine_similarity'] = df['ada_embedding'].apply(
                             lambda v: cosine_similarity(np.array(np.matrix(v)).ravel(), query_vector))
 
 print(df['cosine_similarity'])
-most_similar_index = np.argmax(df['cosine_similarity'])
+most_similar_index = np.argmax(df['cosine_similarity']) # 가장 유사도가 높은 인덱스 리턴 한다.
 print(f"Most similar sentence:: {df['info'][most_similar_index]}")
 
 embeded_prompt = f"""answer only if you are 100% certain
